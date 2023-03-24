@@ -1,3 +1,3 @@
 # Reaction Simulation
-A small interactive application requested by a friend to practice a reaction
-test.
+A small application to practice a reaction test.
+Requested by a friend.
