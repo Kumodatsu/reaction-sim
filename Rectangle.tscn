@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b04pcafv2naho"]
+
+[ext_resource type="Script" path="res://Rectangle.cs" id="1_o5rlk"]
+
+[node name="Rectangle" type="Control" groups=["rectangles", "signals"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o5rlk")
+Dimensions = Vector2(60, 120)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

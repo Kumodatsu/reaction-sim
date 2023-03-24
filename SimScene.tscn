@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjkefp1akhlgg"]
+
+[ext_resource type="Script" path="res://SimScene.cs" id="1_ifohw"]
+[ext_resource type="PackedScene" uid="uid://ywwqj5d4p4wn" path="res://Circle.tscn" id="2_bgvg8"]
+[ext_resource type="PackedScene" uid="uid://b04pcafv2naho" path="res://Rectangle.tscn" id="3_o5w61"]
+[ext_resource type="PackedScene" uid="uid://b8usffkvv436" path="res://Beep.tscn" id="4_k2qok"]
+[ext_resource type="AudioStream" uid="uid://bdfesl2yg7e0o" path="res://sounds/low.wav" id="5_quj4x"]
+[ext_resource type="AudioStream" uid="uid://cegmaa4epxtbd" path="res://sounds/high.wav" id="6_jj2sj"]
+
+[node name="SimScene" type="Node2D"]
+script = ExtResource("1_ifohw")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Circle" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle6" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle2" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle7" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle3" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle8" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle4" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle9" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle5" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Circle10" parent="Canvas/ReferenceRect" instance=ExtResource("2_bgvg8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rectangle" parent="Canvas/ReferenceRect" instance=ExtResource("3_o5w61")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+Dimensions = Vector2(60, 100)
+
+[node name="Rectangle2" parent="Canvas/ReferenceRect" instance=ExtResource("3_o5w61")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 350.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+Dimensions = Vector2(60, 100)
+
+[node name="Beep" parent="Canvas/ReferenceRect" instance=ExtResource("4_k2qok")]
+Sound = ExtResource("5_quj4x")
+
+[node name="Beep2" parent="Canvas/ReferenceRect" instance=ExtResource("4_k2qok")]
+Sound = ExtResource("6_jj2sj")

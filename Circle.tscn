@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ywwqj5d4p4wn"]
+
+[ext_resource type="Script" path="res://Circle.cs" id="1_1onpr"]
+
+[node name="Circle" type="Control" groups=["circles", "signals"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1onpr")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

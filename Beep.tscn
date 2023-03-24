@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8usffkvv436"]
+
+[ext_resource type="Script" path="res://Beep.cs" id="1_x23v6"]
+
+[node name="Beep" type="Node" groups=["beeps", "signals"]]
+script = ExtResource("1_x23v6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
