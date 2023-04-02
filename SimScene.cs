@@ -1,8 +1,7 @@
 using Godot;
-using System;
 
 public partial class SimScene : Node2D {
-  public static Random RNG { get; private set; } = new();
+  public static RandomNumberGenerator RNG { get; private set; } = new();
 
   [ExportCategory("Distribution")]
   [Export] public float CircleWeight    { get; set; } = 0.5f;
@@ -23,11 +22,21 @@ public partial class SimScene : Node2D {
 
   public override void _Ready() {
     base._Ready();
+    var @params     = GetNode<Parameters>("/root/Parameters");
+    CircleWeight    = @params.CircleWeight;
+    RectangleWeight = @params.RectangleWeight;
+    BeepWeight      = @params.BeepWeight;
+    Interval        = @params.Interval;
+    Decrement       = @params.Decrement;
+    MinInterval     = @params.MinInterval;
+    CircleWeight    = @params.CircleWeight;
+
     timer  = GetNode<Timer>("Timer");
     canvas = GetNode<CanvasLayer>("Canvas");
     timer.Timeout += NewSignal;
     timer.WaitTime = Interval;
     timer.Start();
+
   }
 
   private void NewSignal() {
@@ -36,24 +45,26 @@ public partial class SimScene : Node2D {
       timer.WaitTime = MinInterval;
     }
 
-    var r = TotalWeight * (float) RNG.NextDouble();
+    var r = RNG.RandfRange(0.0f, TotalWeight);
+    GD.Print(r);
     if (r < CircleWeight) {
       var circles = GetTree().GetNodesInGroup("circles");
-      var circle  = circles[RNG.Next(0, circles.Count)] as Circle;
+      var circle  = circles[RNG.RandiRange(0, circles.Count - 1)] as Circle;
       circle.ActivateFor(DisplayTime);
       return;
     }
     r -= CircleWeight;
     if (r < RectangleWeight) {
       var rectangles = GetTree().GetNodesInGroup("rectangles");
-      var rectangle  = rectangles[RNG.Next(0, rectangles.Count)] as Rectangle;
+      var rectangle  = rectangles[RNG.RandiRange(0, rectangles.Count - 1)]
+        as Rectangle;
       rectangle.ActivateFor(DisplayTime);
       return;
     }
     r -= RectangleWeight;
     if (r < BeepWeight) {
       var beeps = GetTree().GetNodesInGroup("beeps");
-      var beep  = beeps[RNG.Next(0, beeps.Count)] as Beep;
+      var beep  = beeps[RNG.RandiRange(0, beeps.Count - 1)] as Beep;
       beep.Activate();
       return;
     }

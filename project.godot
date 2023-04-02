@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Colorsim"
-run/main_scene="res://SimScene.tscn"
+run/main_scene="res://ParameterSelect.tscn"
 config/features=PackedStringArray("4.0", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Parameters="*res://Parameters.cs"
 
 [display]
 

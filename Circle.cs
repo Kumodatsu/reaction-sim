@@ -30,7 +30,8 @@ public partial class Circle : Control {
   public override void _Draw() {
     base._Draw();
     if (IsActive) {
-      Color color = PossibleColors[SimScene.RNG.Next(0, PossibleColors.Count)];
+      Color color =
+        PossibleColors[SimScene.RNG.RandiRange(0, PossibleColors.Count - 1)];
       DrawCircle(Vector2.Zero, Radius, color);
     } else {
       DrawArc(Vector2.Zero, Radius, 0.0f, Mathf.Tau, 360, Colors.White);
